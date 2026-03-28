@@ -27,6 +27,11 @@ java {
     }
 }
 
+tasks.withType(JavaCompile) {
+    options.compilerArgs << "-Xlint:deprecation"
+    options.compilerArgs << "-Xlint:unchecked"
+}
+
 repositories {
     mavenCentral()
 }
@@ -34,7 +39,7 @@ repositories {
 buildscript {
     repositories {
         maven {
-            url "https://maven-central.storage-download.googleapis.com/maven2/"
+            url = "https://maven-central.storage-download.googleapis.com/maven2/"
         }
         mavenCentral()
     }
